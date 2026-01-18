@@ -1,16 +1,26 @@
-# React + Vite
+# FSD-2 (Full Stack Development - II)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository serves as a centralized lab record for the Full Stack Development - II course. Each directory corresponds to a specific experiment or project milestone.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Experiment 1: Simple Counter SPA
 
-## React Compiler
+### 📝 Aim
+To create a basic Single Page Application (SPA) using React that dynamically updates the UI without page reloads.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🛠️ Tech Stack
+* **Framework:** React 19 (via Vite)
+* **Language:** JavaScript
+* **Styling:** CSS3 (Custom responsive card layout)
+* **Environment:** Node.js
 
-## Expanding the ESLint configuration
+### 📖 Theory
+A **Single Page Application (SPA)** provides a fluid user experience by loading a single HTML page and updating the content dynamically as the user interacts with the app. 
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+In this experiment, React manages the application's **State** using the `useState` hook. When the state (the counter value) changes, React's reconciliation process updates only the specific part of the real DOM that needs to change, preventing a full page refresh.
+
+### ⚙️ Implementation Details
+* **useState Hook:** Used to initialize and update the counter.
+* **Event Handlers:** Functions linked to "Increment", "Decrement", and "Reset" buttons.
+* **Conditional Styling:** A dedicated reset button with distinct visual feedback.
