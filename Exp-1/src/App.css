@@ -1,0 +1,48 @@
+/* Force the background to be white and remove system margins */
+:root {
+  background-color: white !important;
+  color: black !important;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f0f2f5 !important; /* Light grey background */
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container {
+  background-color: white !important;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  display: inline-block;
+  color: #333 !important;
+}
+
+h1 { color: #222 !important; margin-bottom: 20px; }
+h2 { font-size: 3rem; color: #646cff !important; margin: 20px 0; }
+
+.buttons button {
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  background-color: #222;
+  color: white !important;
+}
+
+.reset-btn {
+  background-color: #ff4747 !important;
+}
