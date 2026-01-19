@@ -1,48 +1,109 @@
-/* Force the background to be white and remove system margins */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* Theme Configurations */
+.dark-mode {
+  --bg: #09090b;
+  --panel: rgba(24, 24, 27, 0.7);
+  --sidebar: rgba(255, 255, 255, 0.02);
+  --text: #fafafa;
+  --text-muted: #71717a;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: #18181b;
+}
+
+.light-mode {
+  --bg: #f4f4f5;
+  --panel: rgba(255, 255, 255, 0.8);
+  --sidebar: rgba(0, 0, 0, 0.02);
+  --text: #09090b;
+  --text-muted: #71717a;
+  --border: rgba(0, 0, 0, 0.08);
+  --input: #ffffff;
+}
+
 :root {
-  background-color: white !important;
-  color: black !important;
+  --accent: #6366f1;
+  --accent-glow: rgba(99, 102, 241, 0.4);
+  --danger: #ef4444;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+* { box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; transition: all 0.3s ease; }
+
+.app-canvas {
   min-height: 100vh;
-  background-color: #f0f2f5 !important; /* Light grey background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  color: var(--text);
+  padding: 20px;
 }
 
-#root {
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
+.main-glass-card {
+  width: 1050px;
+  height: 680px;
+  background: var(--panel);
+  backdrop-filter: blur(25px);
+  border: 1px solid var(--border);
+  border-radius: 40px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 50px 100px -20px rgba(0,0,0,0.3);
 }
 
-.container {
-  background-color: white !important;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  display: inline-block;
-  color: #333 !important;
+/* Sidebar */
+.sidebar { width: 280px; background: var(--sidebar); padding: 50px 25px; border-right: 1px solid var(--border); }
+.brand { font-size: 1.6rem; font-weight: 800; margin-bottom: 60px; letter-spacing: -1px; }
+.brand span { color: var(--accent); }
+
+.nav-btn {
+  width: 100%; padding: 16px 20px; margin-bottom: 12px;
+  background: transparent; border: none; color: var(--text-muted);
+  text-align: left; border-radius: 18px; cursor: pointer;
+  font-weight: 600; display: flex; align-items: center; gap: 15px; font-size: 0.95rem;
 }
 
-h1 { color: #222 !important; margin-bottom: 20px; }
-h2 { font-size: 3rem; color: #646cff !important; margin: 20px 0; }
+.nav-btn.active { background: var(--accent); color: white; box-shadow: 0 10px 25px var(--accent-glow); }
 
-.buttons button {
-  margin: 10px;
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 8px;
-  border: none;
-  background-color: #222;
-  color: white !important;
+/* Main Content Area */
+.content { flex: 1; padding: 60px; display: flex; flex-direction: column; }
+.header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; }
+.breadcrumb { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+.badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; font-weight: 700; }
+
+/* Counter Specifics */
+.big-number { font-size: 10rem; font-weight: 800; margin: 20px 0; line-height: 1; color: var(--accent); text-shadow: 0 0 50px var(--accent-glow); }
+.label { color: var(--text-muted); font-size: 1rem; font-weight: 500; }
+
+/* Buttons UI */
+.action-row { display: flex; gap: 15px; margin-top: 20px; }
+
+.btn-primary { 
+  background: var(--accent); color: white; border: none; padding: 16px 32px; 
+  border-radius: 16px; font-weight: 700; cursor: pointer;
+  box-shadow: 0 8px 20px var(--accent-glow);
 }
 
-.reset-btn {
-  background-color: #ff4747 !important;
+.btn-secondary { 
+  background: var(--input); color: var(--text); border: 1px solid var(--border); 
+  padding: 16px 32px; border-radius: 16px; font-weight: 700; cursor: pointer;
 }
+
+/* THE IMPROVED RESET BUTTON */
+.btn-danger-outline {
+  background: transparent; color: var(--danger); border: 2px solid var(--danger);
+  padding: 16px 32px; border-radius: 16px; font-weight: 700; cursor: pointer;
+}
+.btn-danger-outline:hover { background: var(--danger); color: white; box-shadow: 0 10px 20px rgba(239, 68, 68, 0.3); }
+
+/* Inputs & Forms */
+input { 
+  background: var(--input); border: 1px solid var(--border); color: var(--text);
+  padding: 18px; border-radius: 16px; width: 100%; font-size: 1rem;
+}
+
+.form-group { margin-bottom: 20px; text-align: left; }
+.form-group label { display: block; margin-bottom: 8px; font-size: 0.9rem; font-weight: 600; color: var(--text-muted); }
+
+.fade-in { animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
