@@ -1,0 +1,4 @@
+[build]
+  base = "Exp-1"
+  command = "npm install && npm run build"
+  publish = "dist"
