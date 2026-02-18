@@ -1,5 +1,10 @@
 {
-  "dependencies": {
-    "bootstrap": "^5.3.8"
-  }
+  "name": "fsd-2",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "exp-1",
+    "exp-2",
+    "exp-3"
+  ]
 }
